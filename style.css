@@ -18,6 +18,24 @@ a:hover {
   cursor: pointer;
 }
 
+
+.top {
+  transform: translate(0,-100%);
+  z-index: 1;
+  position: fixed;
+  top: 0px;
+  background-color: black;
+  height: 90px;
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  color: rgb(255, 255, 255);
+}
+.top img {
+  margin-left: 20px;
+}
+
 /* The sidebar menu */
 .sidenav {
     height: 100%; /* Full-height: remove this if you want "auto" height */
@@ -130,7 +148,7 @@ a:hover {
 
 .bottom {
   z-index: 1;
-  position: fixed;
+  position: sticky;
   bottom: 0px;
   background-color: rgb(35, 35, 35);
   height: 90px;
@@ -149,7 +167,7 @@ a:hover {
   /* border: 2px solid white; */
   display: flex;
 }
-.mini-cover img {
+#miniCover img {
   margin: 0 20px;
   border-radius: 50%;
   width: 50px;
@@ -192,8 +210,8 @@ a:hover {
 }
 .volumecontainer {
   display: flex;
-  position: fixed;
-  right:20px;
+  position: absolute;
+  right: 20px;
   align-items: center;
   /* border: 1px solid white; */
 }
@@ -217,14 +235,23 @@ a:hover {
 }
 /* On smaller screens, where width is less than 500pxpx, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-width: 500px) {
+    .top {transform: translate(0,0); position: sticky;}
     .sidenav {transform: translate(0,-100%);}
     .sidenav a {font-size: 15px;}
     .logo img{height:100px; width:100px;}
     .main {margin-left: 0px;}
-    .card {height: 150px;}
-    .card img {height: 90px;}
+    .card {height: 110px; width: 30%; background: rgb(35, 35, 50);}
+    .card img {height: 100px;}
     .songName {font-size: 10px;}
-    .description {font-size: 8px;}
-    /* #bottomSongName {font-size: 10px;} */
-    /* .rightbottom {transform: translate(100%,0);} */
+    .description {height: 0px;}
+    .bottom {position: fixed; background:rgb(35, 35, 50);}
+    #midbottom {margin: 50%;}
+    #leftbottom {width: 60%;}
+    #bottomSongName {font-size: 14px;}
+    .mini-cover img {margin: 0 10px;}
+    .fa-heart {opacity: 0;}
+    /* #rightbottom {transform: translate(100%,0);} */
+    .volumecontainer {right: 10px;}
+    #volumeBar {width: 60px; height: 2px;}
+    #progressBar { height: 0px; width: 0px; opacity: 0;}
 }

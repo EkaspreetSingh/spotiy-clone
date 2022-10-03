@@ -14,6 +14,7 @@ let card = Array.from(document.getElementsByClassName('card'));
 let cover = Array.from(document.getElementsByClassName('cover'));
 let bottomSongName = document.getElementById('bottomSongName');
 bottomSongName.innerText = "song name1";
+let miniCover = document.getElementById('miniCover');
 
 let songs = [
     {songName:"song name1", filePath:"assets/songs/1.mp3", coverPath: "assets/covers/1.jpg"},
@@ -26,6 +27,8 @@ let songs = [
     {songName:"song name8", filePath:"assets/songs/8.mp3", coverPath: "assets/covers/8.jpg"},
     {songName:"song name9", filePath:"assets/songs/9.mp3", coverPath: "assets/covers/9.jpg"}
 ]
+
+miniCover.getElementsByTagName("img")[0].src = songs[0].coverPath;
 
 cover.forEach((element, i)=> {
     // console.log(element, i);
@@ -41,7 +44,9 @@ card.forEach((element, i)=> {
         audioElement.play();
         masterPlay.classList.remove('fa-play-circle');
         masterPlay.classList.add('fa-pause-circle');
-        playingGif.style.opacity=1;
+        playingGif.style.opacity=0.8;
+        bottomSongName.innerText = songs[i].songName;
+        miniCover.getElementsByTagName("img")[0].src = songs[i].coverPath;
     })
 })
 
@@ -86,7 +91,8 @@ volumeBar.addEventListener('change', ()=>{
     //     volumecontainer.add('volumeIcon');
     // }
 })
-
-
-
-
+            
+            
+            
+            
+            
